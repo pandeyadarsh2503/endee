@@ -1,0 +1,30 @@
+services:
+  endee:
+    image: endeeio/endee-server:latest
+    container_name: endee-server
+    ports:
+      - "8080:8080"
+    environment:
+      NDD_NUM_THREADS: 0
+      NDD_AUTH_TOKEN: ""
+    volumes:
+      - endee-data:/data
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: crypto-rag-app
+    ports:
+      - "8501:8501"
+    environment:
+      - ENDEE_URL=http://endee:8080/api/v1
+    env_file:
+      - .env
+    depends_on:
+      - endee
+    restart: unless-stopped
+
+volumes:
+  endee-data:
