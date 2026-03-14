@@ -11,7 +11,7 @@
 
 ## 📖 Problem Statement
 
-In the fast-paced cryptocurrency market, traders and analysts are overwhelmed by the sheer volume of news, reports, and data. Traditional keyword searches are often inaccurate, and raw Large Language Models (LLMs) frequently "hallucinate" incorrect financial data.
+In the fast-paced cryptocurrency market, traders and analysts are overwhelmed by the sheer volume of news, reports, and data. Traditional keyword searches are often inaccurate, and raw Large Language Models (LLMs) frequently "hallucinate" wrong financial data.
 
 **The Solution:** This project implements an advanced **Retrieval-Augmented Generation (RAG)** pipeline.
 1. It ingests thousands of crypto news articles.
